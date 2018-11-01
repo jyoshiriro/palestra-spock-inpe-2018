@@ -1,18 +1,52 @@
 package br.com.palestraspock.util
 
+import spock.lang.Specification
 
-class CalculadoraInssTest {
+
+class CalculadoraInssTest extends Specification {
+
+    def 'Salário de 0 não deve ter desconto'() {
+        given:
+        def salario = 0
+
+        when:
+        def desconto = new CalculadoraInss(salario).getDesconto()
+
+        then:
+        desconto == 0
+    }
+
+    def 'Salário de 1000 deve ter desconto de 50'() {
+        given:
+        def salario = 1000
+
+        when:
+        def desconto = new CalculadoraInss(salario).getDesconto()
+
+        then:
+        desconto == 50
+    }
+
+    def 'Salário não pode ser menor que 0'() {
+        given:
+        def salario = -1
+
+        when:
+        new CalculadoraInss(salario)
+
+        then:
+        thrown(IllegalArgumentException)
+    }
 
     def 'Faixas de INSS são calculadas corretamente'() {
         expect:
         new CalculadoraInss(salario).getDesconto() == inss
 
-        //começar com esse bloco
         where:
         salario | inss
-        100     | inss * 0.05
-        950     | 950 * 0.08
-        2000    | 2000 * 0.11
-        3500    | 3500 * 0.11
+        0       | 0
+        1000    | 50
+        2000    | 200
+        4000    | 800
     }
 }

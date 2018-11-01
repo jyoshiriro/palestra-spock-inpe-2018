@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: br.com.palestraspock.service.ServicoCepTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.812 sec <<< FAILURE!
+Deve retornar o logradouro encontrado(br.com.palestraspock.service.ServicoCepTest)  Time elapsed: 0.28 sec  <<< FAILURE!
+Condition not satisfied:
+
+encontrado == 'Rua de Abobrimha'
+|          |
+|          false
+|          2 differences (87% similarity)
+|          Rua d(a) Abobri(n)ha
+|          Rua d(e) Abobri(m)ha
+Rua da Abobrinha
+
+	at br.com.palestraspock.service.ServicoCepTest.Deve retornar o logradouro encontrado(ServicoCepTest.groovy:23)
+

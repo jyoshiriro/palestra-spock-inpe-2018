@@ -1,0 +1,43 @@
+-------------------------------------------------------------------------------
+Test set: br.com.palestraspock.util.CalculadoraInssTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.049 sec <<< FAILURE!
+Salário não pode ser menor que 0(br.com.palestraspock.util.CalculadoraInssTest)  Time elapsed: 0.006 sec  <<< FAILURE!
+Expected exception of type 'java.lang.IllegalArgumentException', but no exception was thrown
+	at org.spockframework.lang.SpecInternals.checkExceptionThrown(SpecInternals.java:85)
+	at org.spockframework.lang.SpecInternals.thrownImpl(SpecInternals.java:72)
+	at br.com.palestraspock.util.CalculadoraInssTest.Salário não pode ser menor que 0(CalculadoraInssTest.groovy:16)
+
+Faixas de INSS são calculadas corretamente(br.com.palestraspock.util.CalculadoraInssTest)  Time elapsed: 0.033 sec  <<< FAILURE!
+Condition not satisfied:
+
+new CalculadoraInss(salario).getDesconto() == inss
+|                   |        |             |  |
+|                   1000     40.0          |  50
+|                                          false
+br.com.palestraspock.util.CalculadoraInss@3eb738bb
+
+	at br.com.palestraspock.util.CalculadoraInssTest.Faixas de INSS são calculadas corretamente(CalculadoraInssTest.groovy:21)
+
+Faixas de INSS são calculadas corretamente(br.com.palestraspock.util.CalculadoraInssTest)  Time elapsed: 0.038 sec  <<< FAILURE!
+Condition not satisfied:
+
+new CalculadoraInss(salario).getDesconto() == inss
+|                   |        |             |  |
+|                   2000     380.0         |  200
+|                                          false
+br.com.palestraspock.util.CalculadoraInss@1e800aaa
+
+	at br.com.palestraspock.util.CalculadoraInssTest.Faixas de INSS são calculadas corretamente(CalculadoraInssTest.groovy:21)
+
+Faixas de INSS são calculadas corretamente(br.com.palestraspock.util.CalculadoraInssTest)  Time elapsed: 0.042 sec  <<< FAILURE!
+Condition not satisfied:
+
+new CalculadoraInss(salario).getDesconto() == inss
+|                   |        |             |  |
+|                   4000     1200.0        |  800
+|                                          false
+br.com.palestraspock.util.CalculadoraInss@6f03482
+
+	at br.com.palestraspock.util.CalculadoraInssTest.Faixas de INSS são calculadas corretamente(CalculadoraInssTest.groovy:21)
+

@@ -3,7 +3,7 @@ package br.com.palestraspock.demo
 class DemonstracaoGroovy {
 
     static void main(String[] args) {
-		def bairro = ''
+		def bairro = 'copacabana'
 
         def consulta = """
         select * from minha_tabela
@@ -11,12 +11,23 @@ class DemonstracaoGroovy {
         order by campo2 desc
         """
 		
-        println("O bairro ${bairro.toUpperCase()} é mó da hora!")
+        println("O bairro ${bairro} é mó da hora!")
 		
-        def frutas = ['mamão','abacaxi','banana']
+        def frutas = ['Mamão','Abacaxi','Banana']
         frutas.sort()
         println(frutas)
-		
+
+        def comx = frutas.findAll{ it.contains('x') }
+        println(comx)
+
+        def usuarios = [new Usuario(email:'HAHAHA@gmail.com'), new Usuario(email: 'emailoko@inpe.br')]
+
+        usuarios*.corrigirEmail()
+        println(usuarios*.getEmail())
+
+        usuarios.sort{it.email}
+        println(usuarios*.getEmail())
+
         def capitais = [SP:'São Paulo', RJ:'Rio de Janeiro', MG:'Belo Horizonte']
 		
         println("Capital de São Paulo: ${capitais.SP}")
@@ -29,5 +40,14 @@ class DemonstracaoGroovy {
         } else {
             println('Deu ruim no amor')
         }
+    }
+}
+
+class Usuario {
+
+    String email
+
+    void corrigirEmail() {
+        email = email.toLowerCase()
     }
 }
