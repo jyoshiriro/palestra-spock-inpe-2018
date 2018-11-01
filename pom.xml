@@ -10,7 +10,7 @@
 
     <build>
         <plugins>
-            <!-- Plugin obrigatório para o uso se Groovy nos testes unitários -->
+            <!-- Plugin obrigatório para o uso de Groovy nos testes unitários -->
             <plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>
                 <artifactId>gmavenplus-plugin</artifactId>
